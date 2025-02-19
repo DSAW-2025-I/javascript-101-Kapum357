@@ -1,26 +1,42 @@
 // Sum of Two Numbers
 function sum(a, b) {
-  // Add your code here
+  return a + b; 
 }
-
 // Factorial of a Number
 function factorial(n) {
-  // Add your code here
+  if (n < 0) {
+    return -1;
+  }
+  if (n === 0) {
+    return 1;
+  }
+  return n * factorial(n - 1);
 }
-
 // Find the Largest Number
 function findLargest(arr) {
-  // Add your code here
+  return Math.max(...arr);
 }
-
 // Count Vowels in a String
 function countVowels(str) {
-  // Add your code here
+  return str.match(/[aeiou]/gi).length;
 }
-
 // Check if a Number is Prime
 function isPrime(n) {
-  // Add your code here
+  if (n <= 1) {
+    return false;
+  }
+  if (n <= 3) {
+    return true;
+  }
+  if (n % 2 === 0 || n % 3 === 0) {
+    return false;
+  }
+  for (let i = 5; i * i <= n; i += 6) {
+    if (n % i === 0 || n % (i + 2) === 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 module.exports = {
